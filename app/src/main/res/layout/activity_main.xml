@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zl.materialdesign.tablayoutwithviewpager_navigationwithtoolbar_snackbar.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <android.support.v4.widget.DrawerLayout
+
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <!--app:tabMode="scrollable"   可滚动的-->
+            <!--app:tabBackground="@color/colorPrimaryDark"   tab背景颜色-->
+            <!--app:tabTextColor="@android:color/black"  未被选中的颜色 -->
+            <!--app:tabSelectedTextColor=""  被选中的颜色-->
+            <!--app:tabIndicatorColor=""     下面的指示条的颜色-->
+            <!--app:tabTextAppearance="@android:style/TextAppearance.Large"    设置大字体，如果要改字体，要自己写主题样式-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@color/colorPrimaryDark"
+                app:tabMode="scrollable"
+                app:tabTextColor="@android:color/black" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SnackBar"
+                android:id="@+id/btn_SnackBar"/>
+        </LinearLayout>
+
+        <!--app:menu="@menu/navigation"          设置menu资源-->
+        <!--android:layout_gravity="start"       从左边出来 -->
+        <!--menu里面的条目的颜色选择器（文字和图片）-->
+        <!--app:itemTextColor="@color/navigationview_selector"-->
+        <!--app:itemIconTint="@color/navigationview_selector"-->
+        <!--设置侧边栏头布局xml文件-->
+        <!--app:headerLayout="@layout/navigationview_header"-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/navigation"
+            android:layout_gravity="start"
+            app:itemTextColor="@color/navigationview_selector"
+            app:itemIconTint="@color/navigationview_selector"
+            app:headerLayout="@layout/navigationview_header"
+            />
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
+

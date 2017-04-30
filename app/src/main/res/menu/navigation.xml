@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="子菜单1">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/single_1"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="单选1" />
+                <item
+                    android:id="@+id/single_2"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="单选2" />
+                <item
+                    android:id="@+id/single_3"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="单选3" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="子菜单2">
+        <menu>
+            <group android:checkableBehavior="all">
+                <item
+                    android:id="@+id/all_1"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="多选1" />
+                <item
+                    android:id="@+id/all_2"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="多选2" />
+                <item
+                    android:id="@+id/all_3"
+                    android:icon="@mipmap/ic_launcher"
+                    android:title="多选3" />
+            </group>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/item_1"
+        android:icon="@mipmap/ic_launcher"
+        android:title="菜单1" />
+    <item
+        android:id="@+id/item_2"
+        android:icon="@mipmap/ic_launcher"
+        android:title="菜单2" />
+    <item
+        android:id="@+id/item_3"
+        android:icon="@mipmap/ic_launcher"
+        android:title="菜单3" />
+    <item
+        android:id="@+id/item_4"
+        android:icon="@mipmap/ic_launcher"
+        android:title="菜单4" />
+
+
+</menu>

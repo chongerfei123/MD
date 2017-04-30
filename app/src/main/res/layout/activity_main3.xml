@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zl.materialdesign.CoordinatorLayoutwithbegaviorwithCollapsingToolbarLayoutwithAppBarLayoutwithFloatingActionButton.Main3Activity">
+
+    <!--当没有CollapsingToolbarLayout时：
+    让toolbar 自动隐藏和显示
+    在toolbar下：app:layout_scrollFlags = "scroll|enterAlways" :没有悬停条目
+                 app:layout_scrollFlags = "scroll|enterAlwaysCollapsed" ：有悬停条目
+    ps：有了CollapsingToolbarLayout，上面的不需要了
+        当有了有了CollapsingToolbarLayout时
+        app:layout_scrollFlags = "scroll|enterAlways"这个属性就加在CollapsingToolbarLayout上面
+    -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--app:contentScrim="@color/colorAccent" 遮蔽的颜色
+            折起来以后背景条的颜色-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags = "scroll|enterAlways"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--折叠视差效果app:layout_collapseMode="parallax"
+                默认       app:layout_collapseMode="pin"
+            -->
+            <ImageView
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@mipmap/ic_launcher_round"/>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarInAppBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"/>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <TextView
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="38sp"
+        android:layout_gravity="center"
+        android:id="@+id/main3_text"
+        android:background="#f00"
+        android:text="xxxx"/>
+
+    <!--由于是帧布局，app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        加了这句话 ，RecyclerView就会在toolbar下面，而不是叠在toolbar上-->
+    <android.support.v7.widget.RecyclerView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"/>
+
+    <!--需要和CoordinatorLayout联合使用-->
+
+    <!--设置FloatingActionButton挂载在哪个控件的哪个位置上，
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="center"-->
+    <android.support.design.widget.FloatingActionButton
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="center"
+        android:id="@+id/floatingActionButton"
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"/>
+</android.support.design.widget.CoordinatorLayout>
